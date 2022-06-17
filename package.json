@@ -1,0 +1,67 @@
+{
+  "name": "predictivoui",
+  "version": "1.0.0",
+  "description": "predictivo",
+  "main": "index.js",
+  "scripts": {
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/data-grid": "^4.0.0-alpha.19",
+    "@types/react-dom": "^17.0.1",
+    "@types/styled-components": "^5.1.7",
+    "bootstrap": "^4.6.0",
+    "devextreme": "^21.1.4",
+    "devextreme-react": "^21.1.3",
+    "formik": "^2.2.9",
+    "history": "^4.9.0",
+    "material-ui": "^0.20.2",
+    "react": "^16.14.0",
+    "react-bootstrap": "^1.6.5",
+    "react-confirm-alert": "^2.8.0",
+    "react-datepicker": "^4.8.0",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "^5.3.3",
+    "react-script": "^2.0.5",
+    "react-scripts": "^5.0.1",
+    "react-select": "^4.3.1",
+    "rxjs": "^6.3.3",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
+    "styled-components": "^5.2.1",
+    "styled-icons": "^10.27.0",
+    "webpack": "^5.73.0",
+    "yup": "^0.32.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bashie/predictivoUI.git"
+  },
+  "keywords": [
+    "predictivo",
+    "mutismo",
+    "ia"
+  ],
+  "author": "Cecilia Gabelloni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bashie/predictivoUI/issues"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

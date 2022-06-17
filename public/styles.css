@@ -1,0 +1,164 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+.full {
+	height: 100%;
+	padding-top: 15px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.fullLogin {
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	padding: 10%;
+}
+
+.smallLogin {
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	padding: 10%;
+	width: 50%;
+}
+
+.fullTable {
+	height: 90%;
+	padding: 1%;
+}
+
+.menu.menu {
+	z-index: 50;
+	display: flex;
+}
+
+.title {
+	bottom: 0;
+	font-weight: bold;
+	padding: 1%;
+	display:flex; 
+	color: #003152;
+	font-size: 150%;
+	font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.titlePage {
+	bottom: 0;
+	font-weight: bold;
+	padding: 1%;
+	color: white;
+	font-size: 150%;
+	width: 75%;
+	font-family: "Lucida Console", "Courier New", monospace;
+	display:flex; 
+	flex-direction: row;
+}
+
+.bottom {
+	bottom: 0;
+	font-weight: bold;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 1%;
+	display:flex; 
+	color: #003152;
+	font-size: 150%;
+	font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.icon {
+	width: 20px;  
+	height: 20px;
+	cursor: pointer;
+}
+
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+ 
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+ 
+.close-icon {
+  content: 'x';
+  cursor: pointer;
+  position: fixed;
+  right: calc(15% - 30px);
+  top: calc(100vh - 85vh - 33px);
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
+}
+.nuevo-link{
+	bottom: 0;
+	margin-left: auto; 
+	margin-right: 1%;
+	font-weight: bold;
+	padding: 1%;
+	color: white;
+	font-family: "Lucida Console", "Courier New", monospace;
+	display:flex; 
+	border: 1px;
+	justify-content: flex-end;
+	align-self: flex-end;
+	right: 1%;
+	flex-direction: row;
+}
+.topHeader{
+	width: 100%;
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.formik-invalid-feedback {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+.midropdown {
+  padding: 1%;
+}
+.foto {
+  display: flex;
+  justify-content: center;
+}
+.formik-dropdown {
+  width: 100%;
+  display: block;
+  border: none;
+}
+.formik-dropdown-is-invalid {
+  width: 100%;
+  display: block;
+  border: 1px solid red;
+  border-radius: 4px;
+}

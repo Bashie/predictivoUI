@@ -1,0 +1,33 @@
+import React from 'react'
+import styled from 'styled-components'
+
+const HeaderContainer = styled.div(({ }) => `
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 8;
+  background-color: #95C8D8;
+  align-items: flex-end;
+`)
+
+/**
+ * Header component
+ *
+ * @returns {component}           React component
+ */
+const Header = () => {
+  return (
+    <HeaderContainer>
+      <div className="title">
+        S.I.P.E.
+     </div>
+      <img src="img/sipe.jpg" alt="Header with lines" width="100" />
+    </HeaderContainer>
+  )
+}
+
+export default Header
