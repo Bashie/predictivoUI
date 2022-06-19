@@ -1,14 +1,15 @@
-html,
-body {
-  height: 100%;
-  margin: 0;
+html, body {
+	height: 100%;
+	margin: 0;
 }
+
 .full {
 	height: 100%;
 	padding-top: 15px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	padding: 15px
 }
 
 .fullLogin {
@@ -42,7 +43,7 @@ body {
 	bottom: 0;
 	font-weight: bold;
 	padding: 1%;
-	display:flex; 
+	display: flex;
 	color: #003152;
 	font-size: 150%;
 	font-family: "Lucida Console", "Courier New", monospace;
@@ -56,7 +57,7 @@ body {
 	font-size: 150%;
 	width: 75%;
 	font-family: "Lucida Console", "Courier New", monospace;
-	display:flex; 
+	display: flex;
 	flex-direction: row;
 }
 
@@ -66,99 +67,182 @@ body {
 	flex-direction: column;
 	justify-content: flex-end;
 	padding: 1%;
-	display:flex; 
+	display: flex;
 	color: #003152;
 	font-size: 150%;
 	font-family: "Lucida Console", "Courier New", monospace;
 }
 
 .icon {
-	width: 20px;  
+	width: 20px;
 	height: 20px;
 	cursor: pointer;
 }
 
 .popup-box {
-  position: fixed;
-  background: #00000050;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
+	position: fixed;
+	background: #00000050;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
 }
- 
+
 .box {
-  position: relative;
-  width: 70%;
-  margin: 0 auto;
-  height: auto;
-  max-height: 70vh;
-  margin-top: calc(100vh - 85vh - 20px);
-  background: #fff;
-  border-radius: 4px;
-  padding: 20px;
-  border: 1px solid #999;
-  overflow: auto;
+	position: relative;
+	width: 70%;
+	margin: 0 auto;
+	height: auto;
+	max-height: 70vh;
+	margin-top: calc(100vh - 85vh - 20px);
+	background: #fff;
+	border-radius: 4px;
+	padding: 20px;
+	border: 1px solid #999;
+	overflow: auto;
 }
- 
+
 .close-icon {
-  content: 'x';
-  cursor: pointer;
-  position: fixed;
-  right: calc(15% - 30px);
-  top: calc(100vh - 85vh - 33px);
-  background: #ededed;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  line-height: 20px;
-  text-align: center;
-  border: 1px solid #999;
-  font-size: 20px;
+	content: 'x';
+	cursor: pointer;
+	position: fixed;
+	right: calc(15% - 30px);
+	top: calc(100vh - 85vh - 33px);
+	background: #ededed;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	line-height: 20px;
+	text-align: center;
+	border: 1px solid #999;
+	font-size: 20px;
 }
-.nuevo-link{
+
+.nuevo-link {
 	bottom: 0;
-	margin-left: auto; 
+	margin-left: auto;
 	margin-right: 1%;
 	font-weight: bold;
 	padding: 1%;
 	color: white;
 	font-family: "Lucida Console", "Courier New", monospace;
-	display:flex; 
+	display: flex;
 	border: 1px;
 	justify-content: flex-end;
 	align-self: flex-end;
 	right: 1%;
 	flex-direction: row;
 }
-.topHeader{
+
+.topHeader {
 	width: 100%;
-	display:flex;
+	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
 
 .formik-invalid-feedback {
-  width: 100%;
-  margin-top: 0.25rem;
-  font-size: 80%;
-  color: #dc3545;
+	width: 100%;
+	margin-top: 0.25rem;
+	font-size: 80%;
+	color: #dc3545;
 }
+
 .midropdown {
-  padding: 1%;
+	padding: 1%;
 }
+
 .foto {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
+
 .formik-dropdown {
-  width: 100%;
-  display: block;
-  border: none;
+	width: 100%;
+	display: block;
+	border: none;
 }
+
 .formik-dropdown-is-invalid {
-  width: 100%;
-  display: block;
-  border: 1px solid red;
-  border-radius: 4px;
+	width: 100%;
+	display: block;
+	border: 1px solid red;
+	border-radius: 4px;
+}
+
+div.polaroid {
+	width: 80%;
+	background-color: white;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.imgPicto {
+	height: 100px;
+	width: 100px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.container {
+	text-align: center;
+	padding: 2px;
+}
+
+.thirdTable {
+	height: 30%;
+	padding: 1%;
+	width: 100%;
+}
+
+.picto {
+	width: 100%;
+	padding: 1%;
+	display: flex;
+	align-items: center;
+	padding: 2rem 0;
+}
+
+.redondeado {
+	background-color: white;
+	padding: 0;
+	border-radius: 15px;
+	flex-direction: row;
+}
+
+.exampleCarousel1 div>button[data-direction=left] {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg)
+}
+
+.exampleCarousel1 div>button[data-direction=left], .exampleCarousel1 div>button[data-direction=right]
+	{
+	background: url(https://cdn.dsmcdn.com/web/production/slick-arrow.svg)
+		50% no-repeat;
+	border: none;
+	cursor: pointer;
+	outline: 0;
+	position: relative;
+	width: 25px;
+	height: 100%;
+	
+}
+
+.exampleCarousel1 div>button[data-direction=right] {
+}
+
+.vertical {
+	display: flex;
+	flex-direction: row;
+}
+.carousels {
+	width: 100%;
+	padding-left: 1%;
+	padding-right: 1%;
+	display: flex;
+	flex-direction: column;
 }
