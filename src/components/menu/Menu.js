@@ -36,7 +36,6 @@ const Menu = ({
   className
 }) => {
   const { isOpen, menuBackground, menuDuration, closeOnEsc, onClose, position, width } = React.useContext(Context)
-  // Avoid scrolling on content when the navigation is open
   React.useEffect(() => {
     const bodyElStyle = window.document.body.style
 

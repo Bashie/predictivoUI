@@ -23,9 +23,9 @@ const Header = () => {
   return (
     <HeaderContainer>
       <div className="title">
-        S.I.P.E.
+       Pictogramas
+
      </div>
-      <img src="img/sipe.jpg" alt="Header with lines" width="100" />
     </HeaderContainer>
   )
 }

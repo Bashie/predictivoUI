@@ -7,13 +7,13 @@ import { authenticationService } from '../_services';
 const AppTabs = () => {
 	const [key, setKey] = useState('home');
     return (
-       <Tab.Content className="full">
+       <Tab.Content className="fullTable">
         <Tab.Pane eventKey="home" title="Home" className="full">
           <div className="titlePage">Home</div>
 			<div className="foto"><img src='img/jugar.jpg' /></div>
         </Tab.Pane>
-        <Tab.Pane eventKey="pictos" title="Escribir" className="full">
-			<Pictos className="full"/>
+        <Tab.Pane eventKey="pictos" title="Escribir">
+			<Pictos />
         </Tab.Pane>
      </Tab.Content>
     )

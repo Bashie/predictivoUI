@@ -39,7 +39,7 @@ const List = ({onClick}) => (
       <Div><Nav.Link active eventKey='home' onClick={onClick}>Home</Nav.Link></Div>
     </Li>
 	<Li>
-      <Div><Nav.Link eventKey='pictos' onClick={onClick}>Escribir</Nav.Link></Div>
+      <Div><Nav.Link eventKey='pictos' onClick={onClick}>Nueva Frase</Nav.Link></Div>
     </Li>
 	<Li>
       <Div><Nav.Link eventKey='salir' onClick={authenticationService.logout}>Salir</Nav.Link></Div>

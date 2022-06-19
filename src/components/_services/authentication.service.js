@@ -9,9 +9,8 @@ export const authenticationService = {
     logout,
     currentUser: currentUserSubject.asObservable(),
 	getOptions() { return getOptions() },
-	dni: getDni(),
+	usuarioId: getUsuarioId(),
 	token: getToken(),
-	userType: getUserType(),
     get currentUserValue () { return currentUserSubject.value },
 	apiurl: getApiUrl()
 };
@@ -24,7 +23,7 @@ function getOptions() {
 			'Authorization': 'Bearer ' + getToken(),
 			'Access-Control-Allow-Origin': '*'
 		},
-        body: JSON.stringify({ "dni": getDni()})
+        body: JSON.stringify({ "usuarioId": getUsuarioId()})
     };
 }
 
@@ -32,9 +31,11 @@ function getApiUrl(){
 	return 'http://192.168.1.138:8081';
 }
 
-function getDni() {
+function getUsuarioId() {
+	console.log(currentUserSubject.value);
+	console.log(currentUserSubject);
 	if (currentUserSubject.value != null) 
-		return currentUserSubject.value['dni'];
+		return currentUserSubject.value['usuarioId'];
 	return "";
 }
 
@@ -43,13 +44,6 @@ function getToken() {
 		return currentUserSubject.value['token'];
 	return "";
 }
-
-function getUserType() {
-	if (currentUserSubject.value != null) 
-		return currentUserSubject.value['userType'];
-	return "";
-}
-
 
 function login(username, password) {
     const requestOptions = {
@@ -61,6 +55,7 @@ function login(username, password) {
     return fetch(getApiUrl() + '/users/authenticate', requestOptions)
         .then(handleResponse)
         .then(user => {
+			console.log(user);
 			if (user['error']) {
 				throw Error(user['error']); 
 			}
