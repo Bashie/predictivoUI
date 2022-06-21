@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <div className="title">
-       Pictogramas
+       PictoAI
 
      </div>
     </HeaderContainer>

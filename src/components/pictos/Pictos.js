@@ -7,6 +7,7 @@ import Categorias from '../categorias/Categorias'
 const Pictos = (props) => {
 
 	const [pictos, setPictos] = useState([]);
+	const [predicciones, setPredicciones] = useState([]);
 	const [frase, setFrase] = useState([]);
 
 	useEffect(() => {
@@ -34,8 +35,6 @@ const Pictos = (props) => {
 	}
 
 	const gurdarFrase = (values, picto) => {
-		console.log(JSON.stringify({ "fraseUsada": values.concat(picto), "usuarioId": authenticationService.usuarioId }));
-		console.log(authenticationService.usuarioId);
 		let options = {
 			method: 'POST',
 			headers: {
@@ -43,45 +42,64 @@ const Pictos = (props) => {
 				'Authorization': 'Bearer ' + authenticationService.token,
 				'Access-Control-Allow-Origin': '*'
 			},
-			body: JSON.stringify({ "fraseUsada": values.concat(picto), "usuarioId": authenticationService.usuarioId })
+			body: JSON.stringify({ "fraseUsada": values.concat(picto), "usuarioId": authenticationService.getUsuarioId() })
 		};
-		console.log(options);
-		return fetch(authenticationService.apiurl + "/prediccion", options)
+		fetch(authenticationService.apiurl + "/prediccion", options).then(res => res.json())
+			.then((data) => {
+				if (data.status === 403) {
+					return;
+				}
+				setPredicciones(data)
+			})
+			.catch(console.log)
+	}
+
+	const nuevaFrase = () => {
+		setFrase([]);
 	}
 
 	return (
 		<div className="vertical">
 			<div className="redondeado categorias">
-				<Categorias className="categorias" accion={cargarCategorias} />
+				<Categorias className="categorias" accion={cargarCategorias} nuevaFrase={nuevaFrase} />
 			</div>
 			<div className="carousels">
 				<div className="redondeado">
-					{frase && frase.length && (
+					{frase && (frase != "0") && frase.length && (
 						<Carousel swiping={true} show={4.5} slide={3} dynamic={true} infinite={false} className="exampleCarousel1">
 							{frase.map((props) => (
 								<Picto key={props.id} imgUrl={props.imagen} texto={props.nombre} picto={props} className="picto" accion={null} />
 							))}
 						</Carousel>
 					)}
-				</div>
-				<br />
-				<div className="redondeado">
-					{pictos && pictos.length && (
-						<Carousel swiping={true} show={4.5} slide={3} dynamic={true} className="exampleCarousel1">
-							{pictos.map((props) => (
-								<Picto key={props.id} imgUrl={props.imagen} texto={props.nombre} picto={props} className="picto" accion={event => agregarPicto(props)} />
-							))}
-						</Carousel>
+					{(!frase || (frase == "0") || frase.length == 0) && (
+						<div className="imgPicto"></div>
 					)}
 				</div>
 				<br />
 				<div className="redondeado">
-					{pictos && pictos.length && (
+					{predicciones && (predicciones != "0") && predicciones.length > 0 && (
 						<Carousel swiping={true} show={4.5} slide={3} dynamic={true} className="exampleCarousel1">
-							{pictos.map((props) => (
-								<Picto key={props.id} imgUrl={props.imagen} texto={props.nombre} className="picto" />
+							{predicciones.map((props) => (
+								<Picto key={props.id} imgUrl={props.imagen} texto={props.nombre} picto={props} className="picto" accion={event => agregarPicto(props)} />
 							))}
 						</Carousel>
+					)}
+					{(!predicciones || (predicciones == "0") || predicciones.length == 0) && (
+						<div className="imgPicto"></div>
+					)}
+				</div>
+				<br />
+				<div className="redondeado">
+					{pictos && (pictos != "0") && pictos.length > 0 && (
+						<Carousel swiping={true} show={4.5} slide={3} dynamic={true} className="exampleCarousel1">
+							{pictos.map((props) => (
+								<Picto key={props.id} imgUrl={props.imagen} texto={props.nombre} className="picto" accion={event => agregarPicto(props)} />
+							))}
+						</Carousel>
+					)}
+					{(!pictos || (pictos == "0") || pictos.length == 0) && (
+						<div className="imgPicto"></div>
 					)}
 				</div>
 			</div>

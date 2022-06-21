@@ -8,6 +8,8 @@ function logear() {
 const Categorias = (props) => {
 	return (
 		<div >
+			<Collapsible onOpening={() => props.nuevaFrase()} trigger="Nueva Frase">
+			</Collapsible>
 			<Collapsible onOpening={() => props.accion(0)} trigger="Verbo">
 				<p className="categoria">Lorem ipsum dolor</p>
 			</Collapsible>

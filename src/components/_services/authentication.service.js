@@ -10,6 +10,7 @@ export const authenticationService = {
     currentUser: currentUserSubject.asObservable(),
 	getOptions() { return getOptions() },
 	usuarioId: getUsuarioId(),
+	getUsuarioId() { return getUsuarioId() },
 	token: getToken(),
     get currentUserValue () { return currentUserSubject.value },
 	apiurl: getApiUrl()
@@ -32,8 +33,6 @@ function getApiUrl(){
 }
 
 function getUsuarioId() {
-	console.log(currentUserSubject.value);
-	console.log(currentUserSubject);
 	if (currentUserSubject.value != null) 
 		return currentUserSubject.value['usuarioId'];
 	return "";
@@ -55,7 +54,6 @@ function login(username, password) {
     return fetch(getApiUrl() + '/users/authenticate', requestOptions)
         .then(handleResponse)
         .then(user => {
-			console.log(user);
 			if (user['error']) {
 				throw Error(user['error']); 
 			}

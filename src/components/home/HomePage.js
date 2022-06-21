@@ -59,7 +59,7 @@ const HomePage = () => {
 						</>
 					</Menu>
 				</Tab.Container>
-				<Footer className="full" />
+				<Footer />
 			</StyledOffCanvas>
 
 		</Container>
