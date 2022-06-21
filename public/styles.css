@@ -264,3 +264,8 @@ div.container {
 	border-radius: 15px;
 	flex-direction: row;
 }
+
+.categoriasDiv {
+	height: 70vh;
+	overflow: auto;
+}

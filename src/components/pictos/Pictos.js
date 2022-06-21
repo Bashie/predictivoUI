@@ -9,12 +9,18 @@ const Pictos = (props) => {
 	const [pictos, setPictos] = useState([]);
 	const [predicciones, setPredicciones] = useState([]);
 	const [frase, setFrase] = useState([]);
+	const [categoriasVerbos, setCategoriasVerbos] = useState([]);
+	const [categoriasSustantivos, setCategoriasSustantivos] = useState([]);
+	const [categoriasAdjetivos, setCategoriasAdjetivos] = useState([]);
 
 	useEffect(() => {
+		cargarPorCategorias(1);
+		cargarCategorias(0);
 		cargarCategorias(1);
+		cargarCategorias(2);
 	}, [])
 
-	function cargarCategorias(tipo) {
+	function cargarPorCategorias(tipo) {
 		fetch(authenticationService.apiurl + '/pictogramas/' + tipo, authenticationService.getOptions())
 			.then(res => res.json())
 			.then((data) => {
@@ -22,6 +28,27 @@ const Pictos = (props) => {
 					return;
 				}
 				setPictos(data)
+			})
+			.catch(console.log)
+	}
+
+	function cargarCategorias(tipo) {
+		fetch(authenticationService.apiurl + '/categorias/' + tipo, authenticationService.getOptions())
+			.then(res => res.json())
+			.then((data) => {
+				if (data.status === 403) {
+					return;
+				}
+				console.log(data);
+				if (tipo == 0) {
+					setCategoriasVerbos(data);
+				}
+				if (tipo == 1) {
+					setCategoriasSustantivos(data);
+				}
+				if (tipo == 2) {
+					setCategoriasAdjetivos(data);
+				}
 			})
 			.catch(console.log)
 	}
@@ -61,7 +88,7 @@ const Pictos = (props) => {
 	return (
 		<div className="vertical">
 			<div className="redondeado categorias">
-				<Categorias className="categorias" accion={cargarCategorias} nuevaFrase={nuevaFrase} />
+				<Categorias className="categorias" accion={cargarPorCategorias} nuevaFrase={nuevaFrase} categoriasVerbos={categoriasVerbos} categoriasSustantivos={categoriasSustantivos} categoriasAdjetivos={categoriasAdjetivos} />
 			</div>
 			<div className="carousels">
 				<div className="redondeado">

@@ -39,7 +39,7 @@ const HomePage = () => {
 				onClose={() => setIsOpen(false)}
 			>
 				<Header />
-				<Tab.Container id="app-tabs" defaultActiveKey="home" className="full">
+				<Tab.Container id="app-tabs" defaultActiveKey="pictos" className="full">
 					<BurgerIcon
 						size={48}
 						className="menu"

@@ -56,7 +56,7 @@ const LoginPage = (props) => {
 		                            },
 		                            error => {
 		                                setSubmitting(false);
-		                                setStatus("Usuario o contrase\u00F1a invalido");
+		                                setStatus("Usuario o contrase\u00F1a inv&aacute;lido");
 		                            }
 		                        );
 		                }}
@@ -85,6 +85,12 @@ const LoginPage = (props) => {
 		                )}
 		            />
 				</div>
+				<a href="/createUser">
+					Registrarse
+				</a>
+				<a href="">
+					Olvid&eacute; mi contrase&ntilde;a
+				</a>
 			</div>
 		<Footer className="full" />
     </Container>
