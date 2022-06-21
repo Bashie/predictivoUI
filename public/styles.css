@@ -212,6 +212,14 @@ div.container {
 	padding: 0;
 	border-radius: 15px;
 	flex-direction: row;
+	height: 25vh;
+}
+
+.redondeadoCategoria {
+	background-color: white;
+	padding: 0;
+	border-radius: 15px;
+	flex-direction: row;
 }
 
 .exampleCarousel1 div>button[data-direction=left] {

@@ -32,6 +32,18 @@ const Pictos = (props) => {
 			.catch(console.log)
 	}
 
+	function cargarPorCategoriasYTipo(tipo, categoria) {
+		fetch(authenticationService.apiurl + '/pictogramas/' + tipo + "/" + categoria, authenticationService.getOptions())
+			.then(res => res.json())
+			.then((data) => {
+				if (data.status === 403) {
+					return;
+				}
+				setPictos(data)
+			})
+			.catch(console.log)
+	}
+
 	function cargarCategorias(tipo) {
 		fetch(authenticationService.apiurl + '/categorias/' + tipo, authenticationService.getOptions())
 			.then(res => res.json())
@@ -39,7 +51,6 @@ const Pictos = (props) => {
 				if (data.status === 403) {
 					return;
 				}
-				console.log(data);
 				if (tipo == 0) {
 					setCategoriasVerbos(data);
 				}
@@ -87,8 +98,8 @@ const Pictos = (props) => {
 
 	return (
 		<div className="vertical">
-			<div className="redondeado categorias">
-				<Categorias className="categorias" accion={cargarPorCategorias} nuevaFrase={nuevaFrase} categoriasVerbos={categoriasVerbos} categoriasSustantivos={categoriasSustantivos} categoriasAdjetivos={categoriasAdjetivos} />
+			<div className="redondeadoCategoria categorias">
+				<Categorias className="categorias" cargarPorCategoriasYTipo={cargarPorCategoriasYTipo} accion={cargarPorCategorias} nuevaFrase={nuevaFrase} categoriasVerbos={categoriasVerbos} categoriasSustantivos={categoriasSustantivos} categoriasAdjetivos={categoriasAdjetivos} />
 			</div>
 			<div className="carousels">
 				<div className="redondeado">
