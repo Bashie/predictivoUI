@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
 import { Router, Route, Link } from 'react-router-dom';
 import { history } from './components/_helpers';
 import { authenticationService } from './components/_services';

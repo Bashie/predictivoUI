@@ -31,7 +31,6 @@ const Div = styled.div`
     color: #6995C1;
   }
 `
-const userType = authenticationService.userType;
 
 const List = ({ onClick }) => (
 	<Ul>

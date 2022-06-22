@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import Tab from 'react-bootstrap/Tab'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Pictos from '../pictos/Pictos'
-import { authenticationService } from '../_services';
-
 
 const AppTabs = () => {
 	const [key, setKey] = useState('home');

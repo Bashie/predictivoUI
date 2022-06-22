@@ -22,7 +22,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <div className="bottom">
-        AAC
+        Universidad Siglo 21
      </div>
     </FooterContainer>
   )
